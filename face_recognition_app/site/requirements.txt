@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+requests
+pillow
+pymongo
+tensorflow
+keras
+keras-facenet
+scipy
+opencv-python
