@@ -10,6 +10,8 @@ The following section showcases what the website looks like with some screenshot
 ![Group selection](https://i.imgur.com/wE6ieix.jpeg)
 ![Functionality](https://i.imgur.com/lCXCW1w.jpeg)
 
-
-
+## Setting up the project
+The project consists of three sections:
+- Creating the initial model
+- Deploying the model in an Azure ML endpoint
 
