@@ -6,7 +6,9 @@ The webpage was done using Streamlit, the facenet model was trained using the ke
 --------
 
 ## Image showcase
-The following 
+The following section showcases what the website looks like with some screenshots
+![Group selection](https://i.imgur.com/wE6ieix.jpeg)
+![Functionality](https://i.imgur.com/lCXCW1w.jpeg)
 
 
 
