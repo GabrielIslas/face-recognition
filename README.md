@@ -25,3 +25,9 @@ Follow the code in [this notebook](https://github.com/GabrielIslas/face-recognit
 3. Create a C-Support Vector Classificator using sklearn which learns from the embeddings generated
 4. Dump both into .pkl files through joblib
 These last two are what is going to be deployed in the Azure ML endpoint. An sklearn model is created separately like this, leaving the embedding conversion in the front side which is still safe, and also avoids using keras-facenet module in the Azure environments, which are prone to cause compatability problems because Python version which can support this module is not available.
+
+### Deploying into an Azure ML endpoint
+1. Create an Azure Machine Learning workspace, then launch the Studio web app.
+2. Go to the Environments section, then the Custom Environments section, and create a new environment and use the Dockerfile and environment.yaml from [here](https://github.com/GabrielIslas/face-recognition/tree/master/face_recognition_app/model_dev/azure-ml-endpoint) to define it.
+3. After waiting for the environment to get created, go to the Models section and register a new model through a folder to upload both the label encoder and the model itself into one model register.
+4. Finally, once the model has been registered, go to the Endpoints section, and create a new endpoint that uses the models registered in the environment created, and the models send their answer using the endpoint function in the same previous link. (Deploying the endpoint takes a while)
