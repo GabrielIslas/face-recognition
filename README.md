@@ -31,3 +31,27 @@ These last two are what is going to be deployed in the Azure ML endpoint. An skl
 2. Go to the Environments section, then the Custom Environments section, and create a new environment and use the Dockerfile and environment.yaml from [here](https://github.com/GabrielIslas/face-recognition/tree/master/face_recognition_app/model_dev/azure-ml-endpoint) to define it.
 3. After waiting for the environment to get created, go to the Models section and register a new model through a folder to upload both the label encoder and the model itself into one model register.
 4. Finally, once the model has been registered, go to the Endpoints section, and create a new endpoint that uses the models registered in the environment created, and the models send their answer using the endpoint function in the same previous link. (Deploying the endpoint takes a while)
+
+### Setting Up MongoDB Atlas
+1. Create a MongoDB Atlas account:
+   -Go to [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database) and create a free cluster
+2. Once you are in the home page, look for the option "Database Access" in the sidebar and make sure you have "AtlasAdmin" in the role section.
+3. Then go to "Network Access" just below "Database Access" and set it to a public IP address.
+4. Add connection settings to the application:
+   Update the following code with your credentials: "client = MongoClient("mongodb+srv://<username>:<password>@<cluster-url>")"
+
+### Running the Streamlit App
+1. Go to [Streamlit Cloud](https://streamlit.io/cloud)
+2. Sign in with your Github account.
+3. Create an app.
+4. Select "Deploy a public app from Github"
+5. Select the repository where the app is and choose the main file. (app.py)
+6. Let streamlit cook your app!
+
+### -Warnings!!!
+To effectively deploy your app, make sure you upload all the requirements to the repository.
+- The requirements.txt (here you are supposed to write all the libraries used)
+- The packages.txt (if necessary)
+- A folder called ".streamlit" where you must have the next files (file_name.toml):
+  1. The secret key (Azure)
+  2. The file where you can customize the app (colors, shapes, font, etc.)
